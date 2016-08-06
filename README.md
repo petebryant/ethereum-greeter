@@ -9,4 +9,4 @@ using a Hyper-V VM running:
         nodejs v4.4.7
         ethereum-testrpc v2.1.0
         
-The mortal and greeter contracts have been split into 2 files, a migration contract has been added, as well as a couple of tests for the greeter contract.
+The example contract created byh 'truffle init' has been amended to implement the ethereum greeter contract.
