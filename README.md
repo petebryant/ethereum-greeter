@@ -9,4 +9,4 @@ using a Hyper-V VM running:
         nodejs v4.4.7
         ethereum-testrpc v2.1.0
         
-The example contract created byh 'truffle init' has been amended to implement the ethereum greeter contract.
+As a way of finding out how these thing s work I have amended the example contract created by 'truffle init' to implement the ethereum greeter contract.
