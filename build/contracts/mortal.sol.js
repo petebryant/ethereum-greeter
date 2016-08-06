@@ -337,9 +337,9 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260008054600160a060020a03191633179055605c8060226000396000f3606060405260e060020a600035046341c0e1b58114601a575b005b60186000543373ffffffffffffffffffffffffffffffffffffffff90811691161415605a5760005473ffffffffffffffffffffffffffffffffffffffff16ff5b56",
-    "updated_at": 1470428366775,
+    "updated_at": 1470517101687,
     "links": {},
-    "address": "0xa35ae705f72fc547a1bbf2901bdad8ea2f71b80b"
+    "address": "0x569f1d2915b75d6fdc614da5cda8dfe1cb5e62b7"
   }
 };
 

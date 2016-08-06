@@ -5702,8 +5702,8 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260008054600160a060020a0319163317905560f7806100236000396000f3606060405260e060020a60003504630900f01081146038578063445df0ac1460b05780638da5cb5b1460b8578063fdacd5761460c9575b005b60366004356000805433600160a060020a039081169116141560ac576001547ffdacd5760000000000000000000000000000000000000000000000000000000060609081526064919091528291600160a060020a0383169163fdacd5769160849160248183876161da5a03f1156002575050505b5050565b60ed60015481565b60ed600054600160a060020a031681565b603660043560005433600160a060020a039081169116141560ea5760018190555b50565b6060908152602090f3",
-    "updated_at": 1470419238395,
-    "address": "0x8638d42dffb96e542aa1c92b810267591d68091d",
+    "updated_at": 1470517101675,
+    "address": "0x2b1c6a21d02ddfdd63e78a6550c64ac0b1fdee16",
     "links": {}
   }
 };
@@ -6146,6 +6146,18 @@ var Web3 = require("web3");
         "type": "function"
       },
       {
+        "constant": false,
+        "inputs": [
+          {
+            "name": "_greeting",
+            "type": "string"
+          }
+        ],
+        "name": "phrase",
+        "outputs": [],
+        "type": "function"
+      },
+      {
         "constant": true,
         "inputs": [],
         "name": "greet",
@@ -6156,21 +6168,12 @@ var Web3 = require("web3");
           }
         ],
         "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "name": "_greeting",
-            "type": "string"
-          }
-        ],
-        "type": "constructor"
       }
     ],
-    "unlinked_binary": "0x606060405260405161023e38038061023e8339810160405280510160008054600160a060020a031916331790558060016000509080519060200190828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10609f57805160ff19168380011785555b50608e9291505b8082111560cc57600081558301607d565b50505061016e806100d06000396000f35b828001600101855582156076579182015b82811115607657825182600050559160200191906001019060b0565b509056606060405260e060020a600035046341c0e1b58114610026578063cfae321714610068575b005b6100246000543373ffffffffffffffffffffffffffffffffffffffff908116911614156101375760005473ffffffffffffffffffffffffffffffffffffffff16ff5b6100c9600060609081526001805460a06020601f6002600019610100868816150201909416939093049283018190040281016040526080828152929190828280156101645780601f1061013957610100808354040283529160200191610164565b60405180806020018281038252838181518152602001915080519060200190808383829060006004602084601f0104600f02600301f150905090810190601f1680156101295780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b565b820191906000526020600020905b81548152906001019060200180831161014757829003601f168201915b505050505090509056",
-    "updated_at": 1470428366766,
+    "unlinked_binary": "0x606060405260008054600160a060020a03191633179055610258806100246000396000f3606060405260e060020a600035046341c0e1b58114610031578063aaad2e2a14610073578063cfae321714610119575b005b61002f6000543373ffffffffffffffffffffffffffffffffffffffff908116911614156101e85760005473ffffffffffffffffffffffffffffffffffffffff16ff5b60206004803580820135601f81018490049093026080908101604052606084815261002f946024939192918401918190838280828437509496505050505050508060016000509080519060200190828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101ef57805160ff19168380011785555b506101ea9291505b8082111561021f57600081558301610106565b61017a600060609081526001805460a06020601f60026000196101008688161502019094169390930492830181900402810160405260808281529291908282801561024e5780601f106102235761010080835404028352916020019161024e565b60405180806020018281038252838181518152602001915080519060200190808383829060006004602084601f0104600f02600301f150905090810190601f1680156101da5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b565b505050565b828001600101855582156100fe579182015b828111156100fe578251826000505591602001919060010190610201565b5090565b820191906000526020600020905b81548152906001019060200180831161023157829003601f168201915b505050505090509056",
+    "updated_at": 1470517101679,
     "links": {},
-    "address": "0x5c76c0cf3a433ff6f85dcaf99c2beafadb2d46d3"
+    "address": "0xf27a680e8c11c403635619732bb86023c8906e16"
   }
 };
 
@@ -6617,9 +6620,9 @@ var Web3 = require("web3");
       }
     ],
     "unlinked_binary": "0x606060405260008054600160a060020a03191633179055605c8060226000396000f3606060405260e060020a600035046341c0e1b58114601a575b005b60186000543373ffffffffffffffffffffffffffffffffffffffff90811691161415605a5760005473ffffffffffffffffffffffffffffffffffffffff16ff5b56",
-    "updated_at": 1470428366775,
+    "updated_at": 1470517101687,
     "links": {},
-    "address": "0xa35ae705f72fc547a1bbf2901bdad8ea2f71b80b"
+    "address": "0x569f1d2915b75d6fdc614da5cda8dfe1cb5e62b7"
   }
 };
 
@@ -43436,59 +43439,27 @@ if (typeof web3 !== 'undefined') {
 
 
 
-var accounts;
-var account;
-var balance;
+	window.onload = function() {
+    var accounts = web3.eth.accounts;
+	  var deployed = greeter.deployed();
 
-function setStatus(message) {
-  var status = document.getElementById("status");
-  status.innerHTML = message;
-};
+	$("#contAddress").html(deployed.address);
 
-function refreshBalance() {
-  var meta = MetaCoin.deployed();
+    var myGreeterInstance;
+    greeter.new({from: accounts[0], gas: 3141592}).then(
+      function(greet) {
+        myGreeterInstance = greet;
+    });
 
-  meta.getBalance.call(account, {from: account}).then(function(value) {
-    var balance_element = document.getElementById("balance");
-    balance_element.innerHTML = value.valueOf();
-  }).catch(function(e) {
-    console.log(e);
-    setStatus("Error getting balance; see log.");
-  });
-};
+    function talk(phrase) {
+		  myGreeterInstance.phrase(phrase, { from: accounts[0], value: 0 });
+       return myGreeterInstance.greet().then(function(words){
+         $("#status").html(words);
+       });
+    };
 
-function sendCoin() {
-  var meta = MetaCoin.deployed();
-
-  var amount = parseInt(document.getElementById("amount").value);
-  var receiver = document.getElementById("receiver").value;
-
-  setStatus("Initiating transaction... (please wait)");
-
-  meta.sendCoin(receiver, amount, {from: account}).then(function() {
-    setStatus("Transaction complete!");
-    refreshBalance();
-  }).catch(function(e) {
-    console.log(e);
-    setStatus("Error sending coin; see log.");
-  });
-};
-
-window.onload = function() {
-  web3.eth.getAccounts(function(err, accs) {
-    if (err != null) {
-      alert("There was an error fetching your accounts.");
-      return;
-    }
-
-    if (accs.length == 0) {
-      alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
-      return;
-    }
-
-    accounts = accs;
-    account = accounts[0];
-
-    refreshBalance();
-  });
-}
+    $("#saySomething").click(function() {
+		  var phrase = $("#greeting").val();
+		  talk(phrase);
+	  });
+  };

@@ -1,12 +1,9 @@
 module.exports = {
   build: {
     "index.html": "index.html",
-    "app.js": [
-      "javascripts/app.js"
-    ],
-    "app.css": [
-      "stylesheets/app.css"
-    ],
+    "app.js": "app.js",
+    "javascripts/": "javascripts/",   
+    "stylesheets/": "stylesheets/",
     "images/": "images/"
   },
   rpc: {
