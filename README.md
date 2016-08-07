@@ -1,5 +1,5 @@
 # ethereum-greeter
-Implementation of the ethereum greeter on Ubuntu using truffle.
+Implementation of the ethereum greeter using truffle.
 
 The original tutorial can be found here: https://www.ethereum.org/greeter
 
