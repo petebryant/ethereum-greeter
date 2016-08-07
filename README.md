@@ -3,7 +3,7 @@ Implementation of the ethereum greeter using truffle.
 
 The original tutorial can be found here: https://www.ethereum.org/greeter
 
-using a Hyper-V VM running:
+Using a Hyper-V VM running:
         Ubuntu v16.04
         truffle v2.0.4
         nodejs v4.4.7
